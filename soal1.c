@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include <stdio.h>
+
 int main(void) {
     int N, sum = 0;
     scanf ("%d", &N);
@@ -38,6 +40,6 @@ int main(void) {
         sum += arr[i];
     }
     printf ("\n");
-    printf ("MAX SUM : %d\n", sum);
+    printf ("MAX_SUM %d\n", sum);
     return 0;
 }
