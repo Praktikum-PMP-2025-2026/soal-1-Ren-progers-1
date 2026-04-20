@@ -2,7 +2,6 @@
 
 int main(void) {
     int N, sum = 0;
-    printf ("hellyeah\n");
     scanf ("%d", &N);
     int arr[N];
     for (int i = 0; i < N; i++){
@@ -16,6 +15,7 @@ int main(void) {
             while (valid == 0 && k >= 0){
                 if (arr[k] != -1){
                     sumbuff += arr[k];
+                    valid = 1;
                 }
                 k--;
             }
