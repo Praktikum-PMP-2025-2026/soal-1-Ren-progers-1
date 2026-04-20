@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <stdio.h>
-
 int main(void) {
-    int N, sum = 0;
+    int N, sum = 0,  maxmin = -1000;
     scanf ("%d", &N);
     int arr[N];
     for (int i = 0; i < N; i++){
@@ -18,6 +16,7 @@ int main(void) {
                     sumbuff += arr[k];
                     valid = 1;
                     lr++;
+
                 }
                 k--;
             }
@@ -31,11 +30,15 @@ int main(void) {
                 }
                 j++;
             }
+            printf ("sumbuff / 2 : %d", sumbuff / 2);
             if (lr != 2){
                 arr [i] = sumbuff;
             }
+            else if (lr == 2 && sumbuff < 0 && sumbuff %2 != 0){
+                arr[i] = sumbuff/2 - 1;
+            }
             else {
-                arr[i] = sumbuff/2;
+                arr [i] = (sumbuff/2);
             }
         }
     }
@@ -47,9 +50,19 @@ int main(void) {
         else {
             printf ("%d ", arr[i]);
         }
-        sum += arr[i];
+        if (arr [i] > 0){
+            sum += arr[i];
+        }
+        else if (arr [i] < 0){
+            if (arr[i] > maxmin){
+                maxmin = arr[i];
+            }
+        }
+    }
+    if (maxmin != -1000){
+        sum += maxmin;        
     }
     printf ("\n");
-    printf ("MAX_SUM %d", sum);
+    printf ("MAX_SUM %d\n", sum);
     return 0;
 }
