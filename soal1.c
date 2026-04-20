@@ -30,7 +30,6 @@ int main(void) {
                 }
                 j++;
             }
-            printf ("sumbuff / 2 : %d", sumbuff / 2);
             if (lr != 2){
                 arr [i] = sumbuff;
             }
