@@ -58,7 +58,7 @@ int main(void) {
             }
         }
     }
-    if (maxmin != -1000){
+    if (maxmin != -1000 && sum == 0){
         sum += maxmin;        
     }
     printf ("\n");
