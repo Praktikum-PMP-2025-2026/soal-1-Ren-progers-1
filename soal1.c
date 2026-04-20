@@ -1,3 +1,11 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2024/2025
+ *   Modul               : 2 : Data Manipulation and File Eksternal
+ *   Hari dan Tanggal    : Senin, 20 April 2026
+ *   Nama (NIM)          : Akursio Kidung Gamel (13224051)
+ *   Nama File           : soal2.c
+ *   Deskripsi           : Mengkoreksi Elemen Array -1 dengan Rata - Rata Elemen Kiri dan Kanan terdekat yang Valid (bukan -1), jika tidak ada 0
+ * 
+ */
 #include <stdio.h>
 int main(void) {
     int N, sum = 0,  maxmin = -1000;
