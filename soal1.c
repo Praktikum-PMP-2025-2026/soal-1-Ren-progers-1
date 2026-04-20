@@ -7,13 +7,12 @@
  * 
  */
 #include <stdio.h>
-int main(void) {
-    int N, sum = 0,  maxmin = -1000;
-    scanf ("%d", &N);
-    int arr[N];
+void inputar (int* arr, int N){
     for (int i = 0; i < N; i++){
         scanf ("%d", &arr[i]);
     }
+}
+void sortar (int *arr, int N){
     for (int i = 0 ; i < N; i++){
         int sumbuff = 0;
         int valid = 0, lr = 0;
@@ -49,7 +48,8 @@ int main(void) {
             }
         }
     }
-    printf ("RECOVERED ");
+}
+void printar (int *arr, int N, int *maxmin, int *sum){
     for (int i = 0; i < N ; i++){
         if (i == N-1){
             printf ("%d", arr[i]);
@@ -58,17 +58,26 @@ int main(void) {
             printf ("%d ", arr[i]);
         }
         if (arr [i] > 0){
-            sum += arr[i];
+            *sum += arr[i];
         }
         else if (arr [i] < 0){
-            if (arr[i] > maxmin){
-                maxmin = arr[i];
+            if (arr[i] > *maxmin){
+                *maxmin = arr[i];
             }
         }
     }
-    if (maxmin != -1000 && sum == 0){
-        sum += maxmin;        
+    if (*maxmin != -1000 && *sum == 0){
+        *sum += *maxmin;        
     }
+}
+int main(void) {
+    int N, sum = 0,  maxmin = -1000;
+    scanf ("%d", &N);
+    int arr[N];
+    inputar (arr, N);
+    sortar (arr, N);
+    printf ("RECOVERED ");
+    printar (arr, N, &maxmin, &sum);
     printf ("\n");
     printf ("MAX_SUM %d\n", sum);
     return 0;
